@@ -35,6 +35,7 @@ df_Production <- dbReadTable(con, "df_Production")
 dbWriteTable(con, "df_Quality", df_quality, overwrite = TRUE)
 
 dbExecute(con, "
+  CREATE TABLE df_Prod_quality_appendnew AS
   SELECT 
     p.prodmetric_stream_key,
     p.reject_count AS prod_reject_count,
